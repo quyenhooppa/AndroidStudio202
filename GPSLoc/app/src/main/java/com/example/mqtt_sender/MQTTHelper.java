@@ -17,11 +17,12 @@ public class MQTTHelper {
 
     final String serverUri = "tcp://io.adafruit.com:1883";
 
-//    final String clientId = "quyen";
-    final String subscriptionTopic = "longnguyen29798/feeds/buttonsignal";
+    final String feedName = "longnguyen29798/feeds/";
+    final String subscriptionTopic = feedName + "gps-location";
+    final String clientId = "quyen";
 
     final String username = "longnguyen29798";
-    final String password = "aio_EZoK27spIojWH0r816U2VQV1lZuv";
+    final String password = "aio_UaWj96k18ionNh5hqpx9hTcd6jr2";
 
 //    final String clientId = "quyenhooppa";
 //    final String subscriptionTopic = "quyenho/feeds/welcome-feed";
@@ -32,7 +33,7 @@ public class MQTTHelper {
     public MqttAndroidClient mqttAndroidClient;
 
 
-    public MQTTHelper(Context context, String clientId){
+    public MQTTHelper(Context context){
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId);
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override
