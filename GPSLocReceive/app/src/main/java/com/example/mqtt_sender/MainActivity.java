@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     MQTTHelper mqttHelper;
     Button btn;
     Integer counter = 0;
-    Boolean btnStatus = false;
+    Boolean btnStatus = true;
     Boolean changed = true;
     NotificationManager notificationManager;
     String CHANNEL_ID;
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
                 String mess = mqttMessage.toString();
-                Log.d("long-Arrive", mess + "-" + topic + topic.equals(mqttHelper.feedName + "gps-location"));
+                Log.d("long-Arrive", mess + "-" + topic);
 
                 if (topic.equals(mqttHelper.feedName + "buttonsignal")) {
                     if (changed == true) {

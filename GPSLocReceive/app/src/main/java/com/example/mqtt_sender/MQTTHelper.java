@@ -19,7 +19,7 @@ public class MQTTHelper {
 
     final String feedName = "longnguyen29798/feeds/";
     final String subscriptionTopic = feedName + "gps-location";
-    final String clientId = "quyen";
+    final String clientId = "long";
 
     final String username = "longnguyen29798";
     final String password = "aio_UaWj96k18ionNh5hqpx9hTcd6jr2";
