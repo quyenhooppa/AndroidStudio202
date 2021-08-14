@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     String slat;
     String slong;
     Integer counter = 0;
-    Boolean btnStatus = false, changed = true;
+    Boolean btnStatus = true, changed = true;
     Integer countSendLocation = 10;
 //    private GPSTracker gpsTracker;
     NotificationManager notificationManager;
@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String data = jsonString.toString();
 
-//                String data = "{\"lon\":"+slong+",\"lat\":"+slat+"}";
                 sendDataMQTT("gps-location", data);
 //                setLocation();
             }
@@ -121,14 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 btnStatus = !btnStatus;
             }
         });
-
-//        try {
-//            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-//                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
-//            }
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
 
 //        mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 //        try {
@@ -321,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
                 String mess = mqttMessage.toString();
-                Log.d("long-Arrive", mess + "-" + topic);
+                Log.d("quyen-Arrive", mess + "-" + topic);
 
                 if (topic.equals(mqttHelper.feedName + "buttonsignal")) {
                     if (changed == true) {
